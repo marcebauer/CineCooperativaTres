@@ -11,13 +11,13 @@ namespace CooperativaTres.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int usuarioId { get; set; }
-        private String apellido { get; set; }
-        private String nombre { get; set; }
-        private String email { get; set; }
-        private String password { get; set; }
-        [Display(Name = "Fecha nacimiento")]
-        private DateTime fechaDeNacimiento { get; set; }
-        private List<Entrada> entradas { get; set; }
+        public int Id { get; set; }
+        private String Apellido { get; set; }
+        private String Nombre { get; set; }
+        private String Email { get; set; }
+        private String Password { get; set; }
+        [Display(Name = "Fecha de nacimiento")]
+        private DateTime FechaDeNacimiento { get; set; }
+        private List<Entrada> Entradas { get; set; }
     }
 }

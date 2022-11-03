@@ -9,9 +9,9 @@ namespace CooperativaTres.Context
 {
     public class CineDatabaseContext : DbContext
     {
-        public CineDatabaseContext(DbContextOptions<CineDatabaseContext> options)
-: base(options)
+        public CineDatabaseContext(DbContextOptions<CineDatabaseContext> options) : base(options)
         {
+
         }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Funcion> Funciones { get; set; }

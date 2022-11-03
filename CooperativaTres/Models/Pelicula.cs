@@ -11,10 +11,10 @@ namespace CooperativaTres.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int peliculaId { get; set; }
-        private String titulo { get; set; }
-        private DateTime fechaDeEstreno { get; set; }
-        private int duracion { get; set; }
-        private DateTime fechaDesplazamiento { get; set; }
+        public int Id { get; set; }
+        private String Titulo { get; set; }
+        private DateTime FechaDeEstreno { get; set; }
+        private int Duracion { get; set; }
+        private DateTime FechaDesplazamiento { get; set; }
     }
 }

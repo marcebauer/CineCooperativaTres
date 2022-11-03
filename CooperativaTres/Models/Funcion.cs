@@ -9,11 +9,11 @@ namespace CooperativaTres.Models
 {
     public class Funcion
     {
-        private List<Asiento> asientos { get; set; }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int funcionId { get; set; }
-        private Pelicula pelicula { get; set; }
-        private DateTime diaHorario { get; set; }
+        public int Id { get; set; }
+        private List<Asiento> Asientos { get; set; }
+        private Pelicula Pelicula { get; set; }
+        private DateTime DiaHorario { get; set; }
     }
 }

@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using CooperativaTres.Context;
 using Newtonsoft.Json;
 
-namespace MVCBasico
+namespace CooperativaTres
 {
     public class Startup
     {
@@ -29,12 +29,11 @@ namespace MVCBasico
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
-                // This lambda determines whether user consent for non-
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddDbContext<CineDatabaseContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionString:EscuelaDBConnection"
+            options.UseSqlServer(Configuration["ConnectionString:CineDBConnection"
             ]));
             services.AddMvc().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling =
