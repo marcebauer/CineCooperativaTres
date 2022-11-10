@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,12 +13,10 @@ namespace CooperativaTres.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        private String Apellido { get; set; }
-        private String Nombre { get; set; }
-        private String Email { get; set; }
-        private String Password { get; set; }
-        [Display(Name = "Fecha de nacimiento")]
-        private DateTime FechaDeNacimiento { get; set; }
-        private List<Entrada> Entradas { get; set; }
+        public string Apellido { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public DateTime FechaDeNacimiento { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace CooperativaTres.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        private int Fila { get; set; }
-        private Boolean EstaLibre { get; set; }
-        private int NumeroDeAsiento { get; set; }
+        public int Fila { get; set; }
+        public Boolean EstaLibre { get; set; }
+        public int NumeroDeAsiento { get; set; }
     }
 }

@@ -22,60 +22,60 @@ namespace CooperativaTres.Migrations
 
             modelBuilder.Entity("CooperativaTres.Models.Asiento", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Asientos");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Entrada", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Entradas");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Funcion", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Funciones");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Pelicula", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Peliculas");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Usuario", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Usuarios");
                 });
