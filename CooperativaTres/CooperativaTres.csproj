@@ -12,6 +12,8 @@
     <Compile Remove="Migrations\20221110001311_AddPelicula.Designer.cs" />
     <Compile Remove="Migrations\20221110003735_AddUsuario.cs" />
     <Compile Remove="Migrations\20221110003735_AddUsuario.Designer.cs" />
+    <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.cs" />
+    <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

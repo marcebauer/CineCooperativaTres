@@ -4,14 +4,16 @@ using CooperativaTres.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CooperativaTres.Migrations
 {
     [DbContext(typeof(CineDatabaseContext))]
-    partial class CineDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221116223102_AddFuncion")]
+    partial class AddFuncion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
