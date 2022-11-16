@@ -15,6 +15,7 @@ namespace CooperativaTres.Context
         }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Funcion> Funciones { get; set; }
+        public DbSet<AsientosXFuncion> AsientosXFuncion { get; set; }
         public DbSet<Pelicula> Peliculas { get; set; }
         public DbSet<Asiento> Asientos { get; set; }
         public DbSet<Entrada> Entradas { get; set; }

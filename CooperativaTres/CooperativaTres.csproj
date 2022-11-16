@@ -14,6 +14,8 @@
     <Compile Remove="Migrations\20221110003735_AddUsuario.Designer.cs" />
     <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.cs" />
     <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.Designer.cs" />
+    <Compile Remove="Migrations\20221116223659_AddAsientosXFuncion.cs" />
+    <Compile Remove="Migrations\20221116223659_AddAsientosXFuncion.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
