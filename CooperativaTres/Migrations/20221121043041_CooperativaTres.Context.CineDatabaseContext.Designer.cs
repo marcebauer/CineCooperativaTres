@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CooperativaTres.Migrations
 {
     [DbContext(typeof(CineDatabaseContext))]
-    [Migration("20221110003935_AddUsuario")]
-    partial class AddUsuario
+    [Migration("20221121043041_CooperativaTres.Context.CineDatabaseContext")]
+    partial class CooperativaTresContextCineDatabaseContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,9 +28,40 @@ namespace CooperativaTres.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("EstaLibre")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Fila")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumeroDeAsiento")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Asientos");
+                });
+
+            modelBuilder.Entity("CooperativaTres.Models.AsientosXFuncion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AsientoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FuncionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AsientoId");
+
+                    b.HasIndex("FuncionId");
+
+                    b.ToTable("AsientosXFuncion");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Entrada", b =>
@@ -40,13 +71,13 @@ namespace CooperativaTres.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AsientoId")
+                    b.Property<int>("AsientoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("FuncionId")
+                    b.Property<int>("FuncionId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -67,7 +98,15 @@ namespace CooperativaTres.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("DiaHorario")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PeliculaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PeliculaId");
 
                     b.ToTable("Funciones");
                 });
@@ -78,6 +117,18 @@ namespace CooperativaTres.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Duracion")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaDeEstreno")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaDesplazamiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Titulo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -111,19 +162,49 @@ namespace CooperativaTres.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("CooperativaTres.Models.AsientosXFuncion", b =>
+                {
+                    b.HasOne("CooperativaTres.Models.Asiento", "Asiento")
+                        .WithMany()
+                        .HasForeignKey("AsientoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CooperativaTres.Models.Funcion", "Funcion")
+                        .WithMany()
+                        .HasForeignKey("FuncionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CooperativaTres.Models.Entrada", b =>
                 {
                     b.HasOne("CooperativaTres.Models.Asiento", "Asiento")
                         .WithMany()
-                        .HasForeignKey("AsientoId");
+                        .HasForeignKey("AsientoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CooperativaTres.Models.Funcion", "Funcion")
                         .WithMany()
-                        .HasForeignKey("FuncionId");
+                        .HasForeignKey("FuncionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CooperativaTres.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CooperativaTres.Models.Funcion", b =>
+                {
+                    b.HasOne("CooperativaTres.Models.Pelicula", "Pelicula")
+                        .WithMany()
+                        .HasForeignKey("PeliculaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

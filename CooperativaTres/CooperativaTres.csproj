@@ -6,16 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20221110001158_AddUsuarioApellido.cs" />
-    <Compile Remove="Migrations\20221110001158_AddUsuarioApellido.Designer.cs" />
-    <Compile Remove="Migrations\20221110001311_AddPelicula.cs" />
-    <Compile Remove="Migrations\20221110001311_AddPelicula.Designer.cs" />
-    <Compile Remove="Migrations\20221110003735_AddUsuario.cs" />
-    <Compile Remove="Migrations\20221110003735_AddUsuario.Designer.cs" />
-    <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.cs" />
-    <Compile Remove="Migrations\20221116223025_AddMigrationFuncion.Designer.cs" />
-    <Compile Remove="Migrations\20221116223659_AddAsientosXFuncion.cs" />
-    <Compile Remove="Migrations\20221116223659_AddAsientosXFuncion.Designer.cs" />
+    <Compile Remove="Migrations\20221121043758_AddAsientosXFuncion.cs" />
+    <Compile Remove="Migrations\20221121043758_AddAsientosXFuncion.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

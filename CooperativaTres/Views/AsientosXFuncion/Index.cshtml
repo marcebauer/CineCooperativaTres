@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CooperativaTres.Models.AsientosXFuncion>
+
+@{
+    ViewData["Title"] = "Reservar entrada";
+}
+
+<h1>Reservar entrada para</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcion)
+            </th>
+            <th>
+                Fila
+            </th>
+            <th>
+                Numero
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Asiento.EstaLibre)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Funcion.DiaHorario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Asiento.Fila)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Asiento.NumeroDeAsiento)
+                    </td>
+                    <td>
+                        <a asp-action="Reservar" asp-route-id="@item.Id">Reservar</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

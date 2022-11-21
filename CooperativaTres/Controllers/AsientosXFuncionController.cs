@@ -10,19 +10,19 @@ using CooperativaTres.Models;
 
 namespace CooperativaTres.Controllers
 {
-    public class AsientosXFuncionsController : Controller
+    public class AsientosXFuncionController : Controller
     {
         private readonly CineDatabaseContext _context;
 
-        public AsientosXFuncionsController(CineDatabaseContext context)
+        public AsientosXFuncionController(CineDatabaseContext context)
         {
             _context = context;
         }
 
         // GET: AsientosXFuncions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var cineDatabaseContext = _context.AsientosXFuncion.Include(a => a.Asiento).Include(a => a.Funcion);
+            var cineDatabaseContext = _context.AsientosXFuncion.Include(a => a.Asiento).Include(a => a.Funcion).Where(e => e.FuncionId == id);
             return View(await cineDatabaseContext.ToListAsync());
         }
 
@@ -107,6 +107,48 @@ namespace CooperativaTres.Controllers
                 try
                 {
                     _context.Update(asientosXFuncion);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AsientosXFuncionExists(asientosXFuncion.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["AsientoId"] = new SelectList(_context.Asientos, "Id", "Id", asientosXFuncion.AsientoId);
+            ViewData["FuncionId"] = new SelectList(_context.Funciones, "Id", "Id", asientosXFuncion.FuncionId);
+            return View(asientosXFuncion);
+        }
+
+        public async Task<IActionResult> Reservar(int id, [Bind("Id,FuncionId,AsientoId")] AsientosXFuncion asientosXFuncion)
+        {
+            var cineDatabaseContext = _context.AsientosXFuncion.Include(a => a.Asiento).Include(a => a.Funcion).Where(e => e.FuncionId == asientosXFuncion.FuncionId);
+            if (id != asientosXFuncion.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var asientoAReservar = _context.Asientos.Where(e => e.Id == asientosXFuncion.Id).First();
+                    asientoAReservar.EstaLibre = false;
+                    /*var nuevaEntrada = _context.Entradas.Add(new Entrada
+                    {
+                        Id = _context.Entradas.,
+                        Asiento = asientoAReservar,
+                        AsientoId = asientoAReservar.Id,
+                        FuncionId = asientosXFuncion.FuncionId,
+                        Funcion = asientosXFuncion.Funcion,
+                    });*/
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

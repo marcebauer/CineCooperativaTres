@@ -12,9 +12,7 @@ namespace CooperativaTres.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         public int FuncionId { get; set; }
-
         public Funcion Funcion { get; set; }
         public int AsientoId { get; set; }
         public Asiento Asiento { get; set; }

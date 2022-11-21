@@ -12,7 +12,6 @@ namespace CooperativaTres.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        private List<Asiento> Asientos { get; set; }
         public int PeliculaId { get; set; }
         public Pelicula Pelicula { get; set; }
         public DateTime DiaHorario { get; set; }
