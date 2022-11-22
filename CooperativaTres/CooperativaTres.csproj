@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20221121043758_AddAsientosXFuncion.cs" />
-    <Compile Remove="Migrations\20221121043758_AddAsientosXFuncion.Designer.cs" />
+    <Compile Remove="Migrations\20221121230320_AddAsientosXFuncion.cs" />
+    <Compile Remove="Migrations\20221121230320_AddAsientosXFuncion.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

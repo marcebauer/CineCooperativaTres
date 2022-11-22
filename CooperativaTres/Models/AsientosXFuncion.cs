@@ -16,5 +16,6 @@ namespace CooperativaTres.Models
         public Funcion Funcion { get; set; }
         public int AsientoId { get; set; }
         public Asiento Asiento { get; set; }
+        public Boolean EstaLibre { get; set; }
     }
 }

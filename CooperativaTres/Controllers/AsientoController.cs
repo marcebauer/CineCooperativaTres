@@ -19,13 +19,13 @@ namespace CooperativaTres.Controllers
             _context = context;
         }
 
-        // GET: Asiento
+        // GET: Asientoes
         public async Task<IActionResult> Index()
         {
             return View(await _context.Asientos.ToListAsync());
         }
 
-        // GET: Asiento/Details/5
+        // GET: Asientoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,18 +43,18 @@ namespace CooperativaTres.Controllers
             return View(asiento);
         }
 
-        // GET: Asiento/Create
+        // GET: Asientoes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Asiento/Create
+        // POST: Asientoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Fila,EstaLibre,NumeroDeAsiento")] Asiento asiento)
+        public async Task<IActionResult> Create([Bind("Id,Fila,NumeroDeAsiento")] Asiento asiento)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace CooperativaTres.Controllers
             return View(asiento);
         }
 
-        // GET: Asiento/Edit/5
+        // GET: Asientoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,12 +81,12 @@ namespace CooperativaTres.Controllers
             return View(asiento);
         }
 
-        // POST: Asiento/Edit/5
+        // POST: Asientoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Fila,EstaLibre,NumeroDeAsiento")] Asiento asiento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Fila,NumeroDeAsiento")] Asiento asiento)
         {
             if (id != asiento.Id)
             {
@@ -116,7 +116,7 @@ namespace CooperativaTres.Controllers
             return View(asiento);
         }
 
-        // GET: Asiento/Delete/5
+        // GET: Asientoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace CooperativaTres.Controllers
             return View(asiento);
         }
 
-        // POST: Asiento/Delete/5
+        // POST: Asientoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

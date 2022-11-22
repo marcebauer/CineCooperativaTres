@@ -127,6 +127,7 @@ namespace CooperativaTres.Controllers
             return View(asientosXFuncion);
         }
 
+        [Obsolete]
         public async Task<IActionResult> Reservar(int id, [Bind("Id,FuncionId,AsientoId")] AsientosXFuncion asientosXFuncion)
         {
             var cineDatabaseContext = _context.AsientosXFuncion.Include(a => a.Asiento).Include(a => a.Funcion).Where(e => e.FuncionId == asientosXFuncion.FuncionId);
@@ -140,15 +141,17 @@ namespace CooperativaTres.Controllers
                 try
                 {
                     var asientoAReservar = _context.Asientos.Where(e => e.Id == asientosXFuncion.Id).First();
-                    asientoAReservar.EstaLibre = false;
-                    /*var nuevaEntrada = _context.Entradas.Add(new Entrada
+                    _context.AsientosXFuncion.Where(e => e.Id == asientosXFuncion.Id).First().EstaLibre = false;
+                    var funcionSeleccionada = _context.Funciones.Where(e => e.Id == 1).First();
+                    Console.WriteLine(asientosXFuncion.AsientoId);
+                    var usuarioDePrueba = _context.Usuarios.First();
+                    Entrada entrada = new Entrada
                     {
-                        Id = _context.Entradas.,
+                        Funcion = funcionSeleccionada,
                         Asiento = asientoAReservar,
-                        AsientoId = asientoAReservar.Id,
-                        FuncionId = asientosXFuncion.FuncionId,
-                        Funcion = asientosXFuncion.Funcion,
-                    });*/
+                        Usuario = usuarioDePrueba
+                    };
+                    _context.Entradas.Add(entrada);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -162,11 +165,11 @@ namespace CooperativaTres.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index","Home");
             }
             ViewData["AsientoId"] = new SelectList(_context.Asientos, "Id", "Id", asientosXFuncion.AsientoId);
             ViewData["FuncionId"] = new SelectList(_context.Funciones, "Id", "Id", asientosXFuncion.FuncionId);
-            return View(asientosXFuncion);
+            return View();
         }
 
         // GET: AsientosXFuncions/Delete/5
@@ -206,3 +209,4 @@ namespace CooperativaTres.Controllers
         }
     }
 }
+

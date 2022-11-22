@@ -22,7 +22,7 @@ namespace CooperativaTres.Controllers
         // GET: Funcions
         public async Task<IActionResult> Index()
         {
-            var cineDatabaseContext = _context.Funciones.Include(f => f.Pelicula);
+            var cineDatabaseContext = _context.Funciones;
             return View(await cineDatabaseContext.ToListAsync());
         }
 
@@ -35,7 +35,6 @@ namespace CooperativaTres.Controllers
             }
 
             var funcion = await _context.Funciones
-                .Include(f => f.Pelicula)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (funcion == null)
             {
@@ -48,7 +47,6 @@ namespace CooperativaTres.Controllers
         // GET: Funcions/Create
         public IActionResult Create()
         {
-            ViewData["PeliculaId"] = new SelectList(_context.Peliculas, "Id", "Id");
             return View();
         }
 
@@ -57,7 +55,7 @@ namespace CooperativaTres.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PeliculaId,DiaHorario")] Funcion funcion)
+        public async Task<IActionResult> Create([Bind("Id,DiaHorario")] Funcion funcion)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +63,6 @@ namespace CooperativaTres.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PeliculaId"] = new SelectList(_context.Peliculas, "Id", "Id", funcion.PeliculaId);
             return View(funcion);
         }
 
@@ -82,7 +79,6 @@ namespace CooperativaTres.Controllers
             {
                 return NotFound();
             }
-            ViewData["PeliculaId"] = new SelectList(_context.Peliculas, "Id", "Id", funcion.PeliculaId);
             return View(funcion);
         }
 
@@ -91,7 +87,7 @@ namespace CooperativaTres.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PeliculaId,DiaHorario")] Funcion funcion)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DiaHorario")] Funcion funcion)
         {
             if (id != funcion.Id)
             {
@@ -118,7 +114,6 @@ namespace CooperativaTres.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PeliculaId"] = new SelectList(_context.Peliculas, "Id", "Id", funcion.PeliculaId);
             return View(funcion);
         }
 
@@ -131,7 +126,6 @@ namespace CooperativaTres.Controllers
             }
 
             var funcion = await _context.Funciones
-                .Include(f => f.Pelicula)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (funcion == null)
             {

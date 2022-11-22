@@ -12,9 +12,7 @@ namespace CooperativaTres.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         public int Fila { get; set; }
-        public Boolean EstaLibre { get; set; }
         public int NumeroDeAsiento { get; set; }
     }
 }

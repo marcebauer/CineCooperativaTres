@@ -26,9 +26,6 @@ namespace CooperativaTres.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("EstaLibre")
-                        .HasColumnType("bit");
-
                     b.Property<int>("Fila")
                         .HasColumnType("int");
 
@@ -49,6 +46,9 @@ namespace CooperativaTres.Migrations
 
                     b.Property<int>("AsientoId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("EstaLibre")
+                        .HasColumnType("bit");
 
                     b.Property<int>("FuncionId")
                         .HasColumnType("int");
@@ -99,38 +99,12 @@ namespace CooperativaTres.Migrations
                     b.Property<DateTime>("DiaHorario")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PeliculaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PeliculaId");
-
-                    b.ToTable("Funciones");
-                });
-
-            modelBuilder.Entity("CooperativaTres.Models.Pelicula", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Duracion")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaDeEstreno")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FechaDesplazamiento")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Titulo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Peliculas");
+                    b.ToTable("Funciones");
                 });
 
             modelBuilder.Entity("CooperativaTres.Models.Usuario", b =>
@@ -192,15 +166,6 @@ namespace CooperativaTres.Migrations
                     b.HasOne("CooperativaTres.Models.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CooperativaTres.Models.Funcion", b =>
-                {
-                    b.HasOne("CooperativaTres.Models.Pelicula", "Pelicula")
-                        .WithMany()
-                        .HasForeignKey("PeliculaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

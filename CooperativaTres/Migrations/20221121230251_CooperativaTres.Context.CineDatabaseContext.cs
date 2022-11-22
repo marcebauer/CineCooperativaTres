@@ -14,7 +14,6 @@ namespace CooperativaTres.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fila = table.Column<int>(nullable: false),
-                    EstaLibre = table.Column<bool>(nullable: false),
                     NumeroDeAsiento = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -23,19 +22,17 @@ namespace CooperativaTres.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Peliculas",
+                name: "Funciones",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(nullable: true),
-                    FechaDeEstreno = table.Column<DateTime>(nullable: false),
-                    Duracion = table.Column<int>(nullable: false),
-                    FechaDesplazamiento = table.Column<DateTime>(nullable: false)
+                    DiaHorario = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Peliculas", x => x.Id);
+                    table.PrimaryKey("PK_Funciones", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,33 +53,14 @@ namespace CooperativaTres.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Funciones",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PeliculaId = table.Column<int>(nullable: false),
-                    DiaHorario = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Funciones", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Funciones_Peliculas_PeliculaId",
-                        column: x => x.PeliculaId,
-                        principalTable: "Peliculas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AsientosXFuncion",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FuncionId = table.Column<int>(nullable: false),
-                    AsientoId = table.Column<int>(nullable: false)
+                    AsientoId = table.Column<int>(nullable: false),
+                    EstaLibre = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -158,11 +136,6 @@ namespace CooperativaTres.Migrations
                 name: "IX_Entradas_UsuarioId",
                 table: "Entradas",
                 column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Funciones_PeliculaId",
-                table: "Funciones",
-                column: "PeliculaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -181,9 +154,6 @@ namespace CooperativaTres.Migrations
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
-
-            migrationBuilder.DropTable(
-                name: "Peliculas");
         }
     }
 }
