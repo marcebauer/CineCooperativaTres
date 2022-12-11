@@ -18,5 +18,6 @@ namespace CooperativaTres.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
+        public List<Entrada> Entradas;
     }
 }

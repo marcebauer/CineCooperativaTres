@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -64,16 +65,23 @@ namespace CooperativaTres.Controllers
             return RedirectToAction("Index","Home");
         }
 
-        public async Task<IActionResult> ActualizarPerfil()
+        public async Task<IActionResult> MiPerfil()
         {
             string email = HttpContext.Session.GetString("Usuario");
             int id = _context.Usuarios.Where(e => e.Email == email).FirstOrDefault().Id;
+            List<Entrada> entradas = _context.Entradas.Where(u => u.UsuarioId == id).ToList<Entrada>();
+            foreach(Entrada entrada in entradas)
+            {
+                entrada.Funcion = _context.Funciones.Where(f => f.Id == entrada.FuncionId).FirstOrDefault();
+                entrada.Asiento = _context.Asientos.Where(a => a.Id == entrada.AsientoId).FirstOrDefault();
+            }
             var usuario = await _context.Usuarios.FindAsync(id);
+            usuario.Entradas = entradas;
             return View(usuario);
         }
 
         [HttpPost]
-        public async Task<IActionResult> ActualizarPerfil([Bind("Id","Nombre", "Apellido", "Email", "Password", "FechaDeNacimiento")] Usuario usuario)
+        public async Task<IActionResult> MiPerfil([Bind("Id","Nombre", "Apellido", "Email", "Password", "FechaDeNacimiento")] Usuario usuario)
         {
             _context.Update(usuario);
             await _context.SaveChangesAsync();
