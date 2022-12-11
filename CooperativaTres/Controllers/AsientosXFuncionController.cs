@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CooperativaTres.Context;
 using CooperativaTres.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace CooperativaTres.Controllers
 {
@@ -140,16 +141,22 @@ namespace CooperativaTres.Controllers
             {
                 try
                 {
-                    var asientoAReservar = _context.Asientos.Where(e => e.Id == asientosXFuncion.Id).First();
+                    string nomusuario = HttpContext.Session.GetString("Usuario");
+                    if (nomusuario == null)
+                    {
+                        return RedirectToAction("Login", "Home");
+                    }
+                    var asientoXFuncionActual = _context.AsientosXFuncion.Where(e => e.Id == asientosXFuncion.Id).First();
+                    var asientoAReservar = _context.Asientos.Where(e => e.Id == asientoXFuncionActual.AsientoId).First();
                     _context.AsientosXFuncion.Where(e => e.Id == asientosXFuncion.Id).First().EstaLibre = false;
-                    var funcionSeleccionada = _context.Funciones.Where(e => e.Id == 1).First();
+                    var usuarioActual = _context.Usuarios.Where(e => e.Email == nomusuario).First();
+                    var funcionSeleccionada = _context.Funciones.Where(e => e.Id == asientoXFuncionActual.FuncionId).First();
                     Console.WriteLine(asientosXFuncion.AsientoId);
-                    var usuarioDePrueba = _context.Usuarios.First();
                     Entrada entrada = new Entrada
                     {
                         Funcion = funcionSeleccionada,
                         Asiento = asientoAReservar,
-                        Usuario = usuarioDePrueba
+                        Usuario = usuarioActual
                     };
                     _context.Entradas.Add(entrada);
                     await _context.SaveChangesAsync();
