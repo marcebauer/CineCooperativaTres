@@ -437,11 +437,6 @@ C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcorea
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Create.cshtml.g.cs
-C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Delete.cshtml.g.cs
-C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Details.cshtml.g.cs
-C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Edit.cshtml.g.cs
-C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Create.cshtml.g.cs
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Delete.cshtml.g.cs
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Details.cshtml.g.cs
@@ -457,3 +452,4 @@ C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcorea
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\CooperativaTres.pdb
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\CooperativaTres.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Usuario\source\repos\CooperativaTres\CooperativaTres\obj\Debug\netcoreapp3.1\Razor\Views\Home\ActualizarPerfil.cshtml.g.cs
