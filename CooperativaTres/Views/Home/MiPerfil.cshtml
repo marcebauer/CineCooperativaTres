@@ -48,6 +48,9 @@
                         Función
                     </th>
                     <th>
+                        Fecha
+                    </th>
+                    <th>
                         Fila
                     </th>
                     <th>
@@ -59,17 +62,23 @@
             <tbody>
                 @foreach (var entrada in Model.Entradas)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => entrada.Funcion.Titulo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => entrada.Asiento.Fila)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => entrada.Asiento.NumeroDeAsiento)
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => entrada.Funcion.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => entrada.Funcion.DiaHorario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => entrada.Asiento.Fila)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => entrada.Asiento.NumeroDeAsiento)
+                    </td>
+                    <td>
+                        <a asp-controller="Entrada" asp-action="Delete" asp-route-id="@entrada.Id">Cancelar</a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

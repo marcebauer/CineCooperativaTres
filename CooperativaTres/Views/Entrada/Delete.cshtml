@@ -1,0 +1,45 @@
+﻿@model CooperativaTres.Models.Entrada
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Cancelar</h1>
+
+<h3>Estás seguro que deseás cancelar esta reserva?</h3>
+<div>
+    <h4>Entrada</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Función
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Funcion.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Funcion.DiaHorario)
+        </dd>
+        <dt class="col-sm-2">
+            Fila
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Asiento.Fila)
+        </dd>
+        <dt class="col-sm-2">
+            Asiento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Asiento.NumeroDeAsiento)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Cancelar" class="btn btn-danger" /> |
+        <a asp-controller="Home" asp-action="MiPerfil">Volver a mi perfil</a>
+    </form>
+</div>

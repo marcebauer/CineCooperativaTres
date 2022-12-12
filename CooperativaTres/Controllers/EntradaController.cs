@@ -159,9 +159,12 @@ namespace CooperativaTres.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var entrada = await _context.Entradas.FindAsync(id);
+            var reserva = _context.AsientosXFuncion.Where(e => e.AsientoId == entrada.AsientoId && e.FuncionId == entrada.FuncionId).FirstOrDefault();
+            reserva.EstaLibre = true;
+
             _context.Entradas.Remove(entrada);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("MiPerfil","Home");
         }
 
         private bool EntradaExists(int id)
