@@ -9,11 +9,6 @@
       "DEBUG",
       "NETCOREAPP",
       "NETCOREAPP3_1",
-      "NETCOREAPP1_0_OR_GREATER",
-      "NETCOREAPP1_1_OR_GREATER",
-      "NETCOREAPP2_0_OR_GREATER",
-      "NETCOREAPP2_1_OR_GREATER",
-      "NETCOREAPP2_2_OR_GREATER",
       "NETCOREAPP3_0_OR_GREATER",
       "NETCOREAPP3_1_OR_GREATER"
     ],
@@ -38,6 +33,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.1.30",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
           "Newtonsoft.Json": "12.0.3",
+          "Accessibility": "4.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -153,11 +149,24 @@
           "Microsoft.VisualBasic.Core": "10.0.5.0",
           "Microsoft.VisualBasic": "10.0.0.0",
           "Microsoft.Win32.Primitives.Reference": "4.1.2.0",
+          "Microsoft.Win32.Registry.AccessControl": "4.0.5.0",
           "Microsoft.Win32.Registry.Reference": "4.1.3.0",
+          "Microsoft.Win32.SystemEvents": "4.0.2.0",
           "mscorlib": "4.0.0.0",
           "netstandard": "2.1.0.0",
+          "PresentationCore": "4.0.0.0",
+          "PresentationFramework.Aero": "4.0.0.0",
+          "PresentationFramework.Aero2": "4.0.0.0",
+          "PresentationFramework.AeroLite": "4.0.0.0",
+          "PresentationFramework.Classic": "4.0.0.0",
+          "PresentationFramework": "4.0.0.0",
+          "PresentationFramework.Luna": "4.0.0.0",
+          "PresentationFramework.Royale": "4.0.0.0",
+          "PresentationUI": "4.0.0.0",
+          "ReachFramework": "4.0.0.0",
           "System.AppContext.Reference": "4.2.2.0",
           "System.Buffers.Reference": "4.0.2.0",
+          "System.CodeDom": "4.0.3.0",
           "System.Collections.Concurrent.Reference": "4.0.15.0",
           "System.Collections.Reference": "4.1.2.0",
           "System.Collections.NonGeneric.Reference": "4.1.2.0",
@@ -168,23 +177,29 @@
           "System.ComponentModel.EventBasedAsync": "4.1.2.0",
           "System.ComponentModel.Primitives.Reference": "4.2.2.0",
           "System.ComponentModel.TypeConverter.Reference": "4.2.2.0",
+          "System.Configuration.ConfigurationManager.Reference": "4.0.3.0",
           "System.Configuration": "4.0.0.0",
           "System.Console.Reference": "4.1.2.0",
           "System.Core": "4.0.0.0",
           "System.Data.Common": "4.2.2.0",
           "System.Data.DataSetExtensions": "4.0.1.0",
           "System.Data": "4.0.0.0",
+          "System.Design": "4.0.0.0",
           "System.Diagnostics.Contracts": "4.0.4.0",
           "System.Diagnostics.Debug.Reference": "4.1.2.0",
           "System.Diagnostics.EventLog": "4.0.2.0",
           "System.Diagnostics.FileVersionInfo": "4.0.4.0",
+          "System.Diagnostics.PerformanceCounter": "4.0.2.0",
           "System.Diagnostics.Process": "4.2.2.0",
           "System.Diagnostics.StackTrace": "4.1.2.0",
           "System.Diagnostics.TextWriterTraceListener": "4.1.2.0",
           "System.Diagnostics.Tools.Reference": "4.1.2.0",
           "System.Diagnostics.TraceSource": "4.1.2.0",
           "System.Diagnostics.Tracing.Reference": "4.2.2.0",
+          "System.DirectoryServices": "4.0.0.0",
           "System": "4.0.0.0",
+          "System.Drawing.Common": "4.0.2.0",
+          "System.Drawing.Design": "4.0.0.0",
           "System.Drawing": "4.0.0.0",
           "System.Drawing.Primitives": "4.2.1.0",
           "System.Dynamic.Runtime": "4.1.2.0",
@@ -196,13 +211,16 @@
           "System.IO.Compression.FileSystem": "4.0.0.0",
           "System.IO.Compression.ZipFile.Reference": "4.0.5.0",
           "System.IO.Reference": "4.2.2.0",
+          "System.IO.FileSystem.AccessControl": "4.0.5.0",
           "System.IO.FileSystem.Reference": "4.1.2.0",
           "System.IO.FileSystem.DriveInfo": "4.1.2.0",
           "System.IO.FileSystem.Primitives.Reference": "4.1.2.0",
           "System.IO.FileSystem.Watcher": "4.1.2.0",
           "System.IO.IsolatedStorage": "4.1.2.0",
           "System.IO.MemoryMappedFiles": "4.1.2.0",
+          "System.IO.Packaging": "4.0.5.0",
           "System.IO.Pipelines": "4.0.2.0",
+          "System.IO.Pipes.AccessControl": "4.0.3.0",
           "System.IO.Pipes": "4.1.2.0",
           "System.IO.UnmanagedMemoryStream": "4.1.2.0",
           "System.Linq.Reference": "4.2.2.0",
@@ -230,6 +248,7 @@
           "System.Numerics": "4.0.0.0",
           "System.Numerics.Vectors": "4.1.6.0",
           "System.ObjectModel.Reference": "4.1.2.0",
+          "System.Printing": "4.0.0.0",
           "System.Reflection.DispatchProxy": "4.0.6.0",
           "System.Reflection.Reference": "4.2.2.0",
           "System.Reflection.Emit.Reference": "4.1.2.0",
@@ -239,6 +258,7 @@
           "System.Reflection.Metadata.Reference": "1.4.5.0",
           "System.Reflection.Primitives.Reference": "4.1.2.0",
           "System.Reflection.TypeExtensions.Reference": "4.1.2.0",
+          "System.Resources.Extensions": "4.0.1.0",
           "System.Resources.Reader": "4.1.2.0",
           "System.Resources.ResourceManager.Reference": "4.1.2.0",
           "System.Resources.Writer": "4.1.2.0",
@@ -264,7 +284,9 @@
           "System.Security.Cryptography.Cng.Reference": "4.3.3.0",
           "System.Security.Cryptography.Csp.Reference": "4.1.2.0",
           "System.Security.Cryptography.Encoding.Reference": "4.1.2.0",
+          "System.Security.Cryptography.Pkcs": "4.1.1.0",
           "System.Security.Cryptography.Primitives.Reference": "4.1.2.0",
+          "System.Security.Cryptography.ProtectedData.Reference": "4.0.5.0",
           "System.Security.Cryptography.X509Certificates.Reference": "4.2.2.0",
           "System.Security.Cryptography.Xml": "4.0.3.0",
           "System.Security": "4.0.0.0",
@@ -278,6 +300,7 @@
           "System.Text.Encoding.Reference": "4.1.2.0",
           "System.Text.Encoding.Extensions.Reference": "4.1.2.0",
           "System.Text.RegularExpressions.Reference": "4.2.2.0",
+          "System.Threading.AccessControl": "4.0.5.0",
           "System.Threading.Channels": "4.0.2.0",
           "System.Threading.Reference": "4.1.2.0",
           "System.Threading.Overlapped": "4.1.2.0",
@@ -293,8 +316,15 @@
           "System.ValueTuple": "4.0.3.0",
           "System.Web": "4.0.0.0",
           "System.Web.HttpUtility": "4.0.2.0",
+          "System.Windows.Controls.Ribbon": "4.0.0.0",
           "System.Windows": "4.0.0.0",
           "System.Windows.Extensions": "4.0.1.0",
+          "System.Windows.Forms.Design": "4.0.0.0",
+          "System.Windows.Forms.Design.Editors": "4.0.0.0",
+          "System.Windows.Forms": "4.0.0.0",
+          "System.Windows.Input.Manipulations": "4.0.0.0",
+          "System.Windows.Presentation": "4.0.0.0",
+          "System.Xaml": "4.0.0.0",
           "System.Xml": "4.0.0.0",
           "System.Xml.Linq": "4.0.0.0",
           "System.Xml.ReaderWriter.Reference": "4.2.2.0",
@@ -304,7 +334,12 @@
           "System.Xml.XmlSerializer.Reference": "4.1.2.0",
           "System.Xml.XPath": "4.1.2.0",
           "System.Xml.XPath.XDocument": "4.1.2.0",
-          "WindowsBase": "4.0.0.0"
+          "UIAutomationClient": "4.0.0.0",
+          "UIAutomationClientSideProviders": "4.0.0.0",
+          "UIAutomationProvider": "4.0.0.0",
+          "UIAutomationTypes": "4.0.0.0",
+          "WindowsBase": "4.0.0.0",
+          "WindowsFormsIntegration": "4.0.0.0"
         },
         "runtime": {
           "CooperativaTres.dll": {}
@@ -1446,11 +1481,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {
-        "compile": {
-          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
-        }
-      },
+      "System.ComponentModel.Annotations/4.7.0": {},
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1604,12 +1635,6 @@
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "4.5.0",
           "System.Security.Permissions": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
         }
       },
       "System.Console/4.3.0": {
@@ -2135,22 +2160,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Security.Cryptography.ProtectedData/4.5.0": {
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        }
-      },
+      "System.Security.Cryptography.ProtectedData/4.5.0": {},
       "System.Security.Cryptography.X509Certificates/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -2340,6 +2350,12 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         }
+      },
+      "Accessibility/4.0.0.0": {
+        "compile": {
+          "Accessibility.dll": {}
+        },
+        "compileOnly": true
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
         "compile": {
@@ -3031,9 +3047,21 @@
         },
         "compileOnly": true
       },
+      "Microsoft.Win32.Registry.AccessControl/4.0.5.0": {
+        "compile": {
+          "Microsoft.Win32.Registry.AccessControl.dll": {}
+        },
+        "compileOnly": true
+      },
       "Microsoft.Win32.Registry.Reference/4.1.3.0": {
         "compile": {
           "Microsoft.Win32.Registry.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Win32.SystemEvents/4.0.2.0": {
+        "compile": {
+          "Microsoft.Win32.SystemEvents.dll": {}
         },
         "compileOnly": true
       },
@@ -3049,6 +3077,66 @@
         },
         "compileOnly": true
       },
+      "PresentationCore/4.0.0.0": {
+        "compile": {
+          "PresentationCore.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.Aero/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.Aero.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.Aero2/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.Aero2.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.AeroLite/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.AeroLite.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.Classic/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.Classic.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.Luna/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.Luna.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationFramework.Royale/4.0.0.0": {
+        "compile": {
+          "PresentationFramework.Royale.dll": {}
+        },
+        "compileOnly": true
+      },
+      "PresentationUI/4.0.0.0": {
+        "compile": {
+          "PresentationUI.dll": {}
+        },
+        "compileOnly": true
+      },
+      "ReachFramework/4.0.0.0": {
+        "compile": {
+          "ReachFramework.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.AppContext.Reference/4.2.2.0": {
         "compile": {
           "System.AppContext.dll": {}
@@ -3058,6 +3146,12 @@
       "System.Buffers.Reference/4.0.2.0": {
         "compile": {
           "System.Buffers.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.CodeDom/4.0.3.0": {
+        "compile": {
+          "System.CodeDom.dll": {}
         },
         "compileOnly": true
       },
@@ -3121,6 +3215,12 @@
         },
         "compileOnly": true
       },
+      "System.Configuration.ConfigurationManager.Reference/4.0.3.0": {
+        "compile": {
+          "System.Configuration.ConfigurationManager.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Configuration/4.0.0.0": {
         "compile": {
           "System.Configuration.dll": {}
@@ -3157,6 +3257,12 @@
         },
         "compileOnly": true
       },
+      "System.Design/4.0.0.0": {
+        "compile": {
+          "System.Design.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Diagnostics.Contracts/4.0.4.0": {
         "compile": {
           "System.Diagnostics.Contracts.dll": {}
@@ -3178,6 +3284,12 @@
       "System.Diagnostics.FileVersionInfo/4.0.4.0": {
         "compile": {
           "System.Diagnostics.FileVersionInfo.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Diagnostics.PerformanceCounter/4.0.2.0": {
+        "compile": {
+          "System.Diagnostics.PerformanceCounter.dll": {}
         },
         "compileOnly": true
       },
@@ -3217,9 +3329,27 @@
         },
         "compileOnly": true
       },
+      "System.DirectoryServices/4.0.0.0": {
+        "compile": {
+          "System.DirectoryServices.dll": {}
+        },
+        "compileOnly": true
+      },
       "System/4.0.0.0": {
         "compile": {
           "System.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Drawing.Common/4.0.2.0": {
+        "compile": {
+          "System.Drawing.Common.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Drawing.Design/4.0.0.0": {
+        "compile": {
+          "System.Drawing.Design.dll": {}
         },
         "compileOnly": true
       },
@@ -3289,6 +3419,12 @@
         },
         "compileOnly": true
       },
+      "System.IO.FileSystem.AccessControl/4.0.5.0": {
+        "compile": {
+          "System.IO.FileSystem.AccessControl.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.IO.FileSystem.Reference/4.1.2.0": {
         "compile": {
           "System.IO.FileSystem.dll": {}
@@ -3325,9 +3461,21 @@
         },
         "compileOnly": true
       },
+      "System.IO.Packaging/4.0.5.0": {
+        "compile": {
+          "System.IO.Packaging.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.IO.Pipelines/4.0.2.0": {
         "compile": {
           "System.IO.Pipelines.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.IO.Pipes.AccessControl/4.0.3.0": {
+        "compile": {
+          "System.IO.Pipes.AccessControl.dll": {}
         },
         "compileOnly": true
       },
@@ -3493,6 +3641,12 @@
         },
         "compileOnly": true
       },
+      "System.Printing/4.0.0.0": {
+        "compile": {
+          "System.Printing.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Reflection.DispatchProxy/4.0.6.0": {
         "compile": {
           "System.Reflection.DispatchProxy.dll": {}
@@ -3544,6 +3698,12 @@
       "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
         "compile": {
           "System.Reflection.TypeExtensions.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Resources.Extensions/4.0.1.0": {
+        "compile": {
+          "System.Resources.Extensions.dll": {}
         },
         "compileOnly": true
       },
@@ -3697,9 +3857,21 @@
         },
         "compileOnly": true
       },
+      "System.Security.Cryptography.Pkcs/4.1.1.0": {
+        "compile": {
+          "System.Security.Cryptography.Pkcs.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
         "compile": {
           "System.Security.Cryptography.Primitives.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Security.Cryptography.ProtectedData.Reference/4.0.5.0": {
+        "compile": {
+          "System.Security.Cryptography.ProtectedData.dll": {}
         },
         "compileOnly": true
       },
@@ -3778,6 +3950,12 @@
       "System.Text.RegularExpressions.Reference/4.2.2.0": {
         "compile": {
           "System.Text.RegularExpressions.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Threading.AccessControl/4.0.5.0": {
+        "compile": {
+          "System.Threading.AccessControl.dll": {}
         },
         "compileOnly": true
       },
@@ -3871,6 +4049,12 @@
         },
         "compileOnly": true
       },
+      "System.Windows.Controls.Ribbon/4.0.0.0": {
+        "compile": {
+          "System.Windows.Controls.Ribbon.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Windows/4.0.0.0": {
         "compile": {
           "System.Windows.dll": {}
@@ -3880,6 +4064,42 @@
       "System.Windows.Extensions/4.0.1.0": {
         "compile": {
           "System.Windows.Extensions.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Windows.Forms.Design/4.0.0.0": {
+        "compile": {
+          "System.Windows.Forms.Design.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Windows.Forms.Design.Editors/4.0.0.0": {
+        "compile": {
+          "System.Windows.Forms.Design.Editors.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Windows.Forms/4.0.0.0": {
+        "compile": {
+          "System.Windows.Forms.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Windows.Input.Manipulations/4.0.0.0": {
+        "compile": {
+          "System.Windows.Input.Manipulations.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Windows.Presentation/4.0.0.0": {
+        "compile": {
+          "System.Windows.Presentation.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Xaml/4.0.0.0": {
+        "compile": {
+          "System.Xaml.dll": {}
         },
         "compileOnly": true
       },
@@ -3937,9 +4157,39 @@
         },
         "compileOnly": true
       },
+      "UIAutomationClient/4.0.0.0": {
+        "compile": {
+          "UIAutomationClient.dll": {}
+        },
+        "compileOnly": true
+      },
+      "UIAutomationClientSideProviders/4.0.0.0": {
+        "compile": {
+          "UIAutomationClientSideProviders.dll": {}
+        },
+        "compileOnly": true
+      },
+      "UIAutomationProvider/4.0.0.0": {
+        "compile": {
+          "UIAutomationProvider.dll": {}
+        },
+        "compileOnly": true
+      },
+      "UIAutomationTypes/4.0.0.0": {
+        "compile": {
+          "UIAutomationTypes.dll": {}
+        },
+        "compileOnly": true
+      },
       "WindowsBase/4.0.0.0": {
         "compile": {
           "WindowsBase.dll": {}
+        },
+        "compileOnly": true
+      },
+      "WindowsFormsIntegration/4.0.0.0": {
+        "compile": {
+          "WindowsFormsIntegration.dll": {}
         },
         "compileOnly": true
       }
@@ -5148,6 +5398,11 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "Accessibility/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -5723,7 +5978,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.Win32.Registry.AccessControl/4.0.5.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.Win32.Registry.Reference/4.1.3.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Win32.SystemEvents/4.0.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5738,12 +6003,67 @@
       "serviceable": false,
       "sha512": ""
     },
+    "PresentationCore/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.Aero/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.Aero2/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.AeroLite/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.Classic/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.Luna/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework.Royale/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationUI/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReachFramework/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.AppContext.Reference/4.2.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
     "System.Buffers.Reference/4.0.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.CodeDom/4.0.3.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5798,6 +6118,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.Configuration.ConfigurationManager.Reference/4.0.3.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Configuration/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -5828,6 +6153,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.Design/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Diagnostics.Contracts/4.0.4.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -5844,6 +6174,11 @@
       "sha512": ""
     },
     "System.Diagnostics.FileVersionInfo/4.0.4.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Diagnostics.PerformanceCounter/4.0.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5878,7 +6213,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.DirectoryServices/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Drawing.Common/4.0.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Drawing.Design/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5938,6 +6288,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.IO.FileSystem.AccessControl/4.0.5.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.IO.FileSystem.Reference/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -5968,7 +6323,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.IO.Packaging/4.0.5.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.IO.Pipelines/4.0.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Pipes.AccessControl/4.0.3.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -6108,6 +6473,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.Printing/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Reflection.DispatchProxy/4.0.6.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -6149,6 +6519,11 @@
       "sha512": ""
     },
     "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Resources.Extensions/4.0.1.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -6278,7 +6653,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.Security.Cryptography.Pkcs/4.1.1.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Security.Cryptography.ProtectedData.Reference/4.0.5.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -6344,6 +6729,11 @@
       "sha512": ""
     },
     "System.Text.RegularExpressions.Reference/4.2.2.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Threading.AccessControl/4.0.5.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -6423,12 +6813,47 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.Windows.Controls.Ribbon/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Windows/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
     "System.Windows.Extensions/4.0.1.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Forms.Design/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Forms.Design.Editors/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Forms/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Input.Manipulations/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Presentation/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Xaml/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -6478,7 +6903,32 @@
       "serviceable": false,
       "sha512": ""
     },
+    "UIAutomationClient/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIAutomationClientSideProviders/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIAutomationProvider/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIAutomationTypes/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "WindowsBase/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WindowsFormsIntegration/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

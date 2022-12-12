@@ -73,7 +73,12 @@ namespace CooperativaTres
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
+			// Add static files to the request pipeline e.g. hello.html or world.css.
+			app.UseStaticFiles();
+
+			// Add MVC to the request pipeline.
+			app.UseMvc();
+		}
     }
 }
 
