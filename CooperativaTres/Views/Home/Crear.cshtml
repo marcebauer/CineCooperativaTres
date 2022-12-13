@@ -5,18 +5,19 @@
 @model Usuario
 
 <div class="form-container">
+    <h3><strong>@TempData["Message"]</strong></h3>
     <h4>Crear Usuario</h4>
     <form asp-action="Crear" method="post">
         <label asp-for="Nombre">Nombre</label>
-        <input asp-for="Nombre" type="text" placeholder="Ingrese su nombre" class="form-control" />
+        <input asp-for="Nombre" type="text" required placeholder="Ingrese su nombre" class="form-control" />
         <label asp-for="Apellido">Apellido</label>
-        <input asp-for="Apellido" type="text" placeholder="Ingrese su apellido" class="form-control" />
+        <input asp-for="Apellido" type="text" required placeholder="Ingrese su apellido" class="form-control" />
         <label asp-for="Email">Email</label>
-        <input asp-for="Email" type="email" placeholder="Ingrese su E-mail" class="form-control" />
+        <input asp-for="Email" type="email" required placeholder="Ingrese su E-mail" class="form-control" />
         <label asp-for="Password">Contraseña</label>
-        <input asp-for="Password" type="password" placeholder="Ingrese su contraseña" class="form-control" />
+        <input asp-for="Password" type="password" required placeholder="Ingrese su contraseña" class="form-control" />
         <label asp-for="FechaDeNacimiento">Fecha de nacimiento</label>
-        <input asp-for="FechaDeNacimiento" type="date" placeholder="Ingrese su fecha de nacimiento" class="form-control" />
+        <input asp-for="FechaDeNacimiento" type="date" required placeholder="Ingrese su fecha de nacimiento" class="form-control" />
         <input type="submit" value="Ingresar" class="btn btn-primary" />
     </form>
 </div>

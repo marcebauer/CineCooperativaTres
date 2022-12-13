@@ -57,6 +57,7 @@ namespace CooperativaTres.Controllers
         {
             if(_context.Usuarios.Any(u => u.Email == usuario.Email))
             {
+                TempData["Message"] = "No se pudo crear el usuario";
                 return RedirectToAction("Crear");
             }
             _context.Usuarios.Add(usuario);
