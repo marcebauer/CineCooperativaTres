@@ -142,7 +142,7 @@ namespace CooperativaTres.Controllers
                 try
                 {
                     string nomusuario = HttpContext.Session.GetString("Usuario");
-                    if (nomusuario == null)
+                    if (nomusuario == null || nomusuario == "")
                     {
                         return RedirectToAction("Login", "Home");
                     }

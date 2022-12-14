@@ -37,6 +37,12 @@ namespace CooperativaTres.Controllers
             return View();
         }
 
+        public IActionResult Salir()
+        {
+            HttpContext.Session.SetString("Usuario", "");
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Ingresar([Bind("Email","Password")] Usuario usuario)
         {
             if (!_context.Usuarios.Any(u => u.Email == usuario.Email && u.Password == usuario.Password))
@@ -82,8 +88,15 @@ namespace CooperativaTres.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> MiPerfil([Bind("Id","Nombre", "Apellido", "Email", "Password", "FechaDeNacimiento")] Usuario usuario)
+        public async Task<IActionResult> MiPerfil([Bind("Id", "Nombre", "Apellido", "Email", "Password", "FechaDeNacimiento", "Entradas")] Usuario usuario)
         {
+            List<Entrada> entradas = _context.Entradas.Where(u => u.UsuarioId == usuario.Id).ToList<Entrada>();
+            foreach (Entrada entrada in entradas)
+            {
+                entrada.Funcion = _context.Funciones.Where(f => f.Id == entrada.FuncionId).FirstOrDefault();
+                entrada.Asiento = _context.Asientos.Where(a => a.Id == entrada.AsientoId).FirstOrDefault();
+            }
+            usuario.Entradas = entradas;
             _context.Update(usuario);
             await _context.SaveChangesAsync();
             return View(usuario);
